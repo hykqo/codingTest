@@ -2,14 +2,15 @@ package com.company;
 
 import java.util.Scanner;
 
-public class allCalc {
+public class AllCalc {
     public static void main(String[] args) {
-        int a = new Scanner(System.in).nextInt();
-        int b = new Scanner(System.in).nextInt();
-        new allCalc(a, b);
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        new AllCalc(a, b);
     }
 
-    public allCalc(int a, int b) {
+    public AllCalc(int a, int b) {
        plus(a, b);
        minus(a, b);
        mul(a, b);
