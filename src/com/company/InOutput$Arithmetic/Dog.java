@@ -1,4 +1,4 @@
-package com.company;
+package com.company.InOutput$Arithmetic;
 
 public class Dog {
     public static void main(String[] args) {

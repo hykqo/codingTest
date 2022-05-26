@@ -1,4 +1,4 @@
-package com.company;
+package com.company.InOutput$Arithmetic;
 
 public class Sprout {
     public static void main(String[] args) {

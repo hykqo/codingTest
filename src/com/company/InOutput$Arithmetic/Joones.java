@@ -1,4 +1,4 @@
-package com.company;
+package com.company.InOutput$Arithmetic;
 import java.util.Scanner;
 
 public class Joones {

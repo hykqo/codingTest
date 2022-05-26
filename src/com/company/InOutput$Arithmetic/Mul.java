@@ -1,4 +1,4 @@
-package com.company;
+package com.company.InOutput$Arithmetic;
 /*
 * 문제
 (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
