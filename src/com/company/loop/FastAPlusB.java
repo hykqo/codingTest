@@ -1,9 +1,5 @@
 package com.company.loop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 /*
 * 문제
@@ -27,21 +23,21 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 �
 출력
 각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다.
 * */
+import java.io.*;
+import java.util.StringTokenizer;
+
 public class FastAPlusB {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st;
         int t = Integer.parseInt(br.readLine());
-        int a;
-        int b;
-        for(int i = 1; i < t; i++){
-            String str = br.readLine();
-            StringTokenizer st = new StringTokenizer(str, " ");
-            a = Integer.parseInt(st.nextToken());
-            b = Integer.parseInt(st.nextToken());
-
+        for(int i = 0; i < t; i++){
+            st = new StringTokenizer(br.readLine(), " ");
+            bw.write((Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken())) + "\n");
         }
-
-
+        br.close();
+        bw.flush();
+        bw.close();
     }
-
 }
