@@ -27,14 +27,13 @@ public class PlusCycle {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        int f, l, sum, res;
-
-        int first = n;
+        int res = n;
         int i = 0;
         while (true){
-             
+            n = ((n % 10) * 10) + (((n / 10) + (n % 10)) %10);
+            i++;
+            if(res == n) break;
         }
-
+        System.out.println(i);
     }
-
 }
