@@ -35,7 +35,7 @@ public class WordStudy {
         Comparator<Map.Entry<String, Integer>> cmp = Map.Entry.comparingByValue();
         entries.sort(cmp.reversed());
         if(entries.size() > 2) {
-            if(entries.get(0).getValue() == entries.get(1).getValue()) System.out.print("?");
+            if(entries.get(0).getValue().equals(entries.get(1).getValue())) System.out.print("?");
             else System.out.println(entries.get(0).getKey().toUpperCase(Locale.ROOT));
         }
         else System.out.println(entries.get(0).getKey().toUpperCase(Locale.ROOT));
