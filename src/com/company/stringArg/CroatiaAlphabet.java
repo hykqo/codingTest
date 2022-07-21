@@ -24,6 +24,8 @@ dž는 무조건 하나의 알파벳으로 쓰이고, d와 ž가 분리된 것�
 출력
 입력으로 주어진 단어가 몇 개의 크로아티아 알파벳으로 이루어져 있는지 출력한다.*/
 
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,12 +37,9 @@ public class CroatiaAlphabet {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
         br.close();
-        int res = 0;
-        while (true){
-            for()
+        for(String c : cr) {
+            if(s.contains(c)) s = s.replace(c, "!");
         }
-
-        System.out.println(res);
-
+        System.out.println(s.length());
     }
 }
