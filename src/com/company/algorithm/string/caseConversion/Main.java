@@ -28,7 +28,6 @@ public class Main {
         String res = "";
         for(char t : str.toCharArray()) {
             //Character.isLowerCase(t) 단일문자가 소문자인지 체크 true false 반환
-            //Character.isLowerCase(t) 단일문자가 대문자인지 체크 true false 반환
 //            if(Character.isLowerCase(t)) res += Character.toUpperCase(t);
 //            else res+= Character.toLowerCase(t);
 

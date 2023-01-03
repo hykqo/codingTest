@@ -45,10 +45,7 @@ public class Main {
         int pos;
         //indexOf가 띄어쓰기를 발견하지 못하면 -1를 리턴한다. indexOf는 첫번째로 발견되는것을 리턴한다 발견하면 해당 위치를 반환한다
         while ((pos=str.indexOf(" ")) != -1){
-            System.out.println(pos);
             String tmp = str.substring(0, pos);
-            System.out.println(tmp);
-            System.out.println("-------------");
             int len = tmp.length();
             if(len > m){
                 m = len;
