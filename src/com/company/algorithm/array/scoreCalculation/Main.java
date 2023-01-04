@@ -36,7 +36,7 @@ OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다
 * 먄악 반복문을 돌리다가 0이 나오면 카운트를 0으로 초기화 시킨다.
 * */
 
-package com.company.algorithm.array.scoreCaculation;
+package com.company.algorithm.array.scoreCalculation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
