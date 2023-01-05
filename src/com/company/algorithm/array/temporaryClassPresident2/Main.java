@@ -3,7 +3,7 @@
 설명
 김갑동 선생님은 올해 6학년 1반 담임을 맡게 되었다.
 김갑동 선생님은 우선 임시로 반장을 정하고 학생들이 서로 친숙해진 후에 정식으로 선거를 통해 반장을 선출하려고 한다.
-그는 자기반 학생 중에서 1학년부터 5학년까지 지내오면서 한번이라도 같은 반이었던 사람이 가장 많은 학생을 임시 반장으로 정하려 한다.
+그는 자기반 학생 중에서 1학년부터 5학년까지 지내오면서 '한번이라도 같은 반' 이었던 사람이 가장 많은 학생을 임시 반장으로 정하려 한다.
 그래서 김갑동 선생님은 각 학생들이 1학년부터 5학년까지 몇 반에 속했었는지를 나타내는 표를 만들었다.
 예를 들어 학생 수가 5명일 때의 표를 살펴보자.
 
@@ -17,7 +17,7 @@
 
 
 위 경우에 4번 학생을 보면 3번 학생과 2학년 때 같은 반이었고, 3번 학생 및 5번 학생과 3학년 때 같은 반이었으며,
-2번 학생과는 4학년 때 같은 반이었음을 알 수 있다. 그러므로 이 학급에서 4번 학생과 한번이라
+2번 학생과는 4학년 때 같은 반이었음을 알 수 있다. 그러므로 이 학급에서 4번 학생과 한번이라도
 같은 반이었던 사람은 2번 학생, 3번 학생과 5번 학생으로 모두 3명이다.
 이 예에서 4번 학생이 전체 학생 중에서 같은 반이었던 학생 수가 제일 많으므로 임시 반장이 된다.
 각 학생들이 1학년부터 5학년까지 속했던 반이 주어질 때, 임시 반장을 정하는 프로그램을 작성하시오.
@@ -44,7 +44,7 @@
 
 예시 출력 1
 4*/
-package com.company.algorithm.array.temporaryClassPresident;
+package com.company.algorithm.array.temporaryClassPresident2;
 
 import java.util.Scanner;
 
@@ -53,9 +53,9 @@ public class Main {
         Main m =new Main();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[][] arr = new int[n][5];
-        for(int i=0; i<n; i++){
-            for(int j=0; j<5; j++){
+        int[][] arr = new int[n+1][6];
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=5; j++){
                 arr[i][j] = sc.nextInt();
             }
         }
@@ -63,38 +63,28 @@ public class Main {
     }
 
     private void result(int n, int[][] arr) {
-        //res에는 점수가 제일 높은 학생을 저장.
         int res = 0;
-        //resc는 res학생의 점수 저장.
-        int resc = -1;
+        int max = Integer.MIN_VALUE;
         /*
-        * 0. 3중반복문을 사용한다.
-        * 1. 1중반복은 각 학생을 나타낸다.
-        * 1. 1중반복안에서 카운트 변수를 만든다.
-        * 2. 2~3중반복안에서는 1중반복에서 얻은 학생별로 같은 반인 다른 학생을 탐색한다.
-        * 1. 만약 같은 반인 다른학생이 있다면, 같은 반인 학생 숫자만큼 카운트를 높인다.
-        * 2. 반복문이 종료되면 가장 많이 카운트 된 학생을 프린트 한다.
+        * 1. 3중 반복문을 사용한다.
+        * 2. i=학생, j=다른학생, k=학년을 뜻한다.
+        * 3. 학생을 다른학생과 비교하여 같은 학년
         * */
-        for(int c=0; c<n; c++){
+        for (int i=1; i<=n; i++) {
             int cnt = 0;
-            for(int i=0; i<5; i++){
-                for(int j=0; j<n; j++){
-                    if(arr[j][i] == arr[c][i]) {
+            for(int j=1; j<=n; j++){
+                for(int k=1; k<=5; k++){
+                    if(arr[i][k] == arr[j][k]){
                         cnt++;
+                        break;
                     }
                 }
-                //카운팅은 자기자신또한 되므로 1~5학년까지의 자기자신을 빼야함.
-                cnt-=1;
             }
-            System.out.println("연산 전 학생"+(c+1)+": "+cnt);
-            if(cnt > resc){
-                resc = cnt;
-                res = c;
+            if(cnt > max){
+                max = cnt;
+                res = i;
             }
-            System.out.println("연산 후 학생"+(res+1)+": "+resc);
-            System.out.println("============================");
         }
-        //학년은 실제 1~5학년사이의 숫자가 출력되야 하는데, 실제 연산은 0~4로 되어있으므로 +1을 해주어야 함.
-        System.out.println(res+1);
+        System.out.println(res);
     }
 }
