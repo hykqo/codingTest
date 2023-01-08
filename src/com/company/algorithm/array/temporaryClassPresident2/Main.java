@@ -74,6 +74,9 @@ public class Main {
             int cnt = 0;
             for(int j=1; j<=n; j++){
                 for(int k=1; k<=5; k++){
+                    System.out.println("arr[i][k]" + arr[i][k]);
+                    System.out.println("arr[j[k]" + arr[j][k]);
+                    System.out.println("=========================");
                     if(arr[i][k] == arr[j][k]){
                         cnt++;
                         break;
