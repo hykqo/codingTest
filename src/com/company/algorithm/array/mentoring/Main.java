@@ -36,17 +36,28 @@ public class Main {
         //i=학생(열), j=다른학생(열), k=테스트(행)
         int cnt = 0;
         for(int i=0; i<n; i++) {
-            boolean bool = false;
             for (int j=0; j<n; j++) {
+                if(i == j) continue;
+                boolean bool = false;
                 for(int k=0; k<m; k++){
+                    bool = true;
                     System.out.println("[i : "+i+"], "+"[j : "+j+"], "+"[k : "+k+"]");
-                    System.out.println("arr[k][i]" + arr[k][i]);
-                    System.out.println("arr[k][j]" + arr[k][j]);
-                    System.out.println("===============================================");
-                    if(i != j && arr[k][i] > arr[j][i]) bool = true;
+                    System.out.println("arr[k][i] : " + arr[k][i]);
+                    System.out.println("arr[k][j] : " + arr[k][j]);
+                    if(arr[k][i] > arr[k][j]) {
+                       bool = false;
+                       System.out.println(bool);
+                       break;
+                   }
+                    else System.out.println(bool);
+                    System.out.println("-------------");
+
                 }
+                if(bool) cnt++;
+                System.out.println("결과는" + bool);
+                System.out.println("=========================================");
             }
-            if(bool) cnt++;
+
         }
         return cnt;
     }
@@ -60,13 +71,8 @@ public class Main {
         //수학테스트 횟수(행)
         int m = sc.nextInt();
         int[][] arr = new int[m][n];
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                System.out.print("0 ");
-//                arr[m][n] = sc.nextInt();
-            }
-            System.out.println("");
-        }
+        for(int i=0; i<m; i++)
+            for(int j=0; j<n; j++) arr[i][j] = sc.nextInt();
         System.out.println(res.result(n, m, arr));
     }
 }
