@@ -64,22 +64,13 @@ public class Main {
                         //등수가 해당 학생과 같다면
                         if (arr[k][s] == i) pi = s;
                         if (arr[k][s] == j) pj = s;
-//                        System.out.println("arr["+k+"]["+s+"] : "+arr[k][s]);
-//                        System.out.println("arr["+k+"]["+j+"] : "+arr[k][j]);
                     }
 
-                    if (pi < pj) {
-                        System.out.println("");
-                        System.out.print("pi : "+pi);
-                        System.out.println(", pj : "+pj);
-                        System.out.println("-----------");
-                        cnt++;
-                    }
+                    if (pi < pj) cnt++;
+
                 }
-                if (cnt == m) {
-                    System.out.println("i = " + i+", j = " + j+", cnt = " + cnt);
-                    res++;
-                }
+                if (cnt == m) res++;
+
             }
         }
         return res;
