@@ -20,25 +20,19 @@ N입력으로 양의 정수 N이 입력되면 2개 이상의 연속된 자연수
 예시 출력 1
 3
 */
-package com.company.algorithm.twoPointers.sumOfNum;
+package com.company.algorithm.twoPointers.sumOfNumTwoMath;
 
 import java.util.Scanner;
 
 public class Main {
     private int result(int n) {
-        int max = n/2+1;
-        int res = 0, sum =0, lt=1;
-        for(int rt=1; rt<=max; rt++){
-            sum+=rt;
-            if(sum==n) {
-                res++;
-            }
-            while (sum>=n){
-                sum-=lt++;
-                if(sum==n) {
-                    res++;
-                }
-            }
+        int res=0, cnt=1;
+        n--;
+        while (n>0){
+            //연속된 자연수의 개수
+            cnt++;
+            n=n-cnt;
+            if(n%cnt==0) res++;
         }
         return res;
     }
