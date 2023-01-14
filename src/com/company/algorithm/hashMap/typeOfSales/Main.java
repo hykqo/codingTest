@@ -28,7 +28,9 @@ N일간의 매출기록과 연속구간의 길이 K가 주어지면 첫 번째 �
 */
 package com.company.algorithm.hashMap.typeOfSales;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -41,14 +43,17 @@ public class Main {
         int[] arr  = new int[n];
         for(int i=0; i<n; i++) arr[i] = sc.nextInt();
         HashMap<Integer, Integer> map = new HashMap<>();
-        for(int a : arr) map.put(a, map.getOrDefault(a, 0)+1);
-        int lt =0, rt=k, sum=0;
-        for(int i=0; i<k; i++) {
-            
+        int lt=0;
+        List<Integer> res = new ArrayList<>();
+        for(int i=0; i<k; i++) map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
+        res.add(map.size());
+        for(int i=k; i<n; i++){
+            map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
+            if(map.get(arr[lt]) > 1) map.put(arr[lt], map.get(arr[lt])-1);
+            else map.remove(arr[lt]);
+            res.add(map.size());
+            lt++;
         }
-        for(int i=0; i<n; i++){
-
-        }
-
+        for(int i : res) System.out.print(i+" ");
     }
 }
