@@ -49,7 +49,7 @@
 예시 출력 2
 24
 */
-package com.company.algorithm.StackAndQue.tungsten;
+package com.company.algorithm.stackAndQue.tungsten;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -60,6 +60,7 @@ public class Main {
         String n = sc.next();
         Stack<Character> stack = new Stack<>();
         int tungsten = 0;
+        // ()(((()())(())()))(())
         //텅스텐의 막대기 끝과 레이저를 구분해야 한다.
         for(int i=0; i< n.length(); i++){
             //여는 괄호면 무조건 stack에 푸쉬

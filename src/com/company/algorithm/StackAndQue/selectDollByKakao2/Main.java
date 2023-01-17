@@ -65,7 +65,7 @@ moves 배열 각 원소들의 값은 1 이상이며 board 배열의 가로 크�
 예시 출력 1
 4
 */
-package com.company.algorithm.StackAndQue.selectDollByKakao2;
+package com.company.algorithm.stackAndQue.selectDollByKakao2;
 
 import java.util.Scanner;
 import java.util.Stack;

@@ -17,7 +17,7 @@
 예시 출력 1
 12
 */
-package com.company.algorithm.StackAndQue.postfix;
+package com.company.algorithm.stackAndQue.postfix;
 
 import java.util.Scanner;
 import java.util.Stack;

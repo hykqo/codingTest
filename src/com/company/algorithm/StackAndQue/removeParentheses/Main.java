@@ -13,7 +13,7 @@
 
 예시 출력 1
 EFLM*/
-package com.company.algorithm.StackAndQue.removeParentheses;
+package com.company.algorithm.stackAndQue.removeParentheses;
 
 import java.util.Scanner;
 import java.util.Stack;

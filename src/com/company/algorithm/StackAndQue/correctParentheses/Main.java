@@ -1,4 +1,4 @@
-package com.company.algorithm.StackAndQue.correctParentheses;
+package com.company.algorithm.stackAndQue.correctParentheses;
 
 import java.util.Scanner;
 
