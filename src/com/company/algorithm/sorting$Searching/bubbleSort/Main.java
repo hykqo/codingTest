@@ -30,16 +30,15 @@ public class Main {
         //버블정렬 사용.
         //0의 인덱스부터 인덱스의 끝까지 각 인덱스를 비교하여 제일 높은 자리수를 인덱스의 끝으로 보내는 기법.
         int x = 0;
-        while (x == n) {
+        while (x < n-1) {
             for (int j = x+1; j < n; j++) {
                 if (arr[x] > arr[j]) {
                     int c = arr[x];
                     arr[x] = arr[j];
                     arr[j] = c;
-                }
+                } else x++;
             }
         }
         for(int i : arr) System.out.print(i+" ");
     }
-
 }
