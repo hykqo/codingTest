@@ -14,10 +14,7 @@ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프�
 예시 입력 1
 6
 11 7 5 6 10 9
-6
-5 6 10 9 11 7
-*
-*
+
 *ex)
 * 11 11 5 6 10 9
 * 7 11 5 6 10 9
@@ -27,30 +24,24 @@ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프�
 
 예시 출력 1
 5 6 7 9 10 11*/
-
-package com.company.algorithm.sorting$Searching.insertionSort;
+package com.company.algorithm.sorting$Searching.insertSort2;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for(int i=0; i<n; i++) arr[i] = sc.nextInt();
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int[] arr = new int[n];
+       for(int i=0; i<n; i++) arr[i] = sc.nextInt();
 
-        //삽입정렬 -
-        for(int i=1; i<n; i++){
-            //tmp : 기준이 되는 숫자
+       for(int i=1; i<n; i++){
             int tmp = arr[i], j;
-            //arr[j] : tmp 기준으로 이전 인덱스의 숫자들
-            for(j=i-1; j>=0; j--){
-                if(arr[j] > tmp)arr[j+1] = arr[j];
-                else break;
-            }
-            arr[j+1] = tmp;
-        }
-        for(int i : arr) System.out.print(i+" ");
-
+           for(j=i-1; j>=0; j--){
+               if(arr[j] > tmp) arr[j+1] = arr[j];
+               else break;
+           }
+           arr[j+1] = tmp;
+       }
     }
 }
