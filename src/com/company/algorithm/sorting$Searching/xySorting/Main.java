@@ -51,6 +51,7 @@ public class Main {
                         x[j+1] = x[j];
                         y[j+1] = y[j];
                     }
+                    else break;
                 }
                 else break;
             }
