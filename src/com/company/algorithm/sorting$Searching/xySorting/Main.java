@@ -47,7 +47,7 @@ public class Main {
                     y[j+1] = y[j];
                 }
                 else if(x[j] == tmpX) {
-                    if(y[i] > tmpY) {
+                    if(y[j] > tmpY) {
                         x[j+1] = x[j];
                         y[j+1] = y[j];
                     }
