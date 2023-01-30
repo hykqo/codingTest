@@ -25,7 +25,7 @@ N개의 좌표를 정렬하여 출력하세요.
 2 7
 3 6*/
 
-package com.company.algorithm.sorting$Searching.xySorting4;
+package com.company.algorithm.sorting$Searching.xySorting5;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,8 +48,8 @@ public class Main {
             //정렬은 앞에서 뒤순으로 정렬 시도.
             //this가 앞, o가 뒤
             //오름차순으로 하기 위해 음수가 리턴되도록 처리(this - o).
-            if(this.x==o.x) return this.y-o.y;
-            else return this.x-o.x;
+            if(this.x==o.x) return o.y-this.y;
+            else return o.x-this.x;
         }
 
         @Override
