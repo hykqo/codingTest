@@ -25,7 +25,7 @@ N개의 좌표를 정렬하여 출력하세요.
 2 7
 3 6*/
 
-package com.company.algorithm.sorting$Searching.xySorting;
+package com.company.algorithm.sorting$Searching.xySorting2;
 
 import java.util.Scanner;
 
@@ -39,25 +39,33 @@ public class Main {
             x[i] = sc.nextInt();
             y[i] = sc.nextInt();
         }
-        //삽입정렬 활용
-        for(int i=1; i<n; i++){
-            int tmpX = x[i], tmpY = y[i], j;
-            for(j=i-1; j>=0; j--){
-                if(x[j] > tmpX) {
-                    x[j+1] = x[j];
-                    y[j+1] = y[j];
+
+        //버블정렬 활용
+        for(int i=0; i<n-1; i++){
+            for(int j=0; j<n-1-i; j++){
+                if(x[j] > x[j+1]){
+                    int tx = x[j];
+                    int ty = y[j];
+
+                    x[j] = x[j+1];
+                    y[j] = y[j+1];
+
+                    x[j+1] = tx;
+                    y[j+1] = ty;
                 }
-                else if(x[j] == tmpX) {
-                    if(y[j] > tmpY) {
-                        x[j+1] = x[j];
-                        y[j+1] = y[j];
+                else if(x[j] == x[j+1]){
+                    if(y[j] > y[j+1]) {
+                        int tx = x[j];
+                        int ty = y[j];
+
+                        x[j] = x[j+1];
+                        y[j] = y[j+1];
+
+                        x[j+1] = tx;
+                        y[j+1] = ty;
                     }
-                    else break;
                 }
-                else break;
             }
-            x[j+1] = tmpX;
-            y[j+1] = tmpY;
         }
         for(int i=0; i<n; i++) System.out.println(x[i] + " " + y[i]);
     }
