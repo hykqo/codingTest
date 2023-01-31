@@ -22,6 +22,7 @@
 package com.company.algorithm.sorting$Searching.twoMinuteSearch2;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -32,19 +33,28 @@ public class Main {
         int[] arr = new int[n];
         for(int i=0; i<n; i++) arr[i] = sc.nextInt();
 
-        //버블정렬 활용
         int res = 0;
-        for(int i=0; i<n-1; i++) {
-            for(int j=0; j<n-i-1; j++){
-                if(arr[j] > arr[j+1]){
-                    int tmp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = tmp;
-                }
-                if(arr[j] == m) res = j;
-                else if(arr[j+1] == m) res = j+1;
+        Arrays.sort(arr);
+        //이분검색 활용 - 배열이 정렬된 상태에서만 사용 가능.
+        // 순차검색은 시간복잡도 o(n)
+        // 이분검색은 시간복잡도 o(logN)
+        // 이분검색방법은 정렬된 배열에서 index를 통한 data검색에 매우 효율적임.
+        // 이분검색 방법 : lt=0, rt=n으로 설정, mid=(lt+rt)/2 설정 이후 lt와 rt를 조건에 따라 옮기면 됨.
+        //조건 : mid가 m보다 작을경우 rt = mid-1이 됨.
+        //조건 : mid가 m보다 클경우 lt = mid+1이 됨.
+        //조건 : mid가 m이랑 같을경우 return;
+        //조건 : lt가 rt보다 커질경우 값을 찾지 못한 것이기 때문에 break;
+
+        int lt=0, rt=n-1;
+        while (lt<=rt){
+            int mid=(lt+rt)/2;
+            if(arr[mid]==m){
+                res=mid+1;
+                break;
             }
+            else if(arr[mid]>m) rt=mid-1;
+            else lt=mid+1;
         }
-        System.out.println(res+1);
+        System.out.println(res);
     }
 }
