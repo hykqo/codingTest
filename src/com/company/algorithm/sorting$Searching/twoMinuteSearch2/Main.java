@@ -42,7 +42,7 @@ public class Main {
                     arr[j+1] = tmp;
                 }
                 if(arr[j] == m) res = j;
-                else if(arr[j] == m) res = j+1;
+                else if(arr[j+1] == m) res = j+1;
             }
         }
         System.out.println(res+1);
