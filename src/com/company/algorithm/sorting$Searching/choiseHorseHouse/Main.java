@@ -21,6 +21,22 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 예시 출력 1
 3*/
 
+/*
+* 1-9 5
+* * 1,8, false
+* 1-4 2
+* * 1,4,8 true
+* * 1,4,9 true
+* 2-4 3
+* * 1,4,8 true
+* * 1,4,9 true
+* 3-4 3
+* * 1,4,8 true
+* * 1,4,9 true
+* 4-4 4
+* * 1,8, false
+* */
+
 package com.company.algorithm.sorting$Searching.choiseHorseHouse;
 
 import java.util.Arrays;
@@ -28,16 +44,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    boolean count(int[] arr, int mid, int c){
-        int t = arr[0];
+    int count(int[] arr, int mid){
+        int cnt = 1;
+        int ep = arr[0];
         for(int a : arr){
-            if(a-t < mid) {
-                c--;
-                t=a;
+            if(a-ep >= mid) {
+                cnt++;
+                ep = a;
             }
-            if(c == 0) return true;
         }
-        return false;
+        return cnt;
     }
 
     public static void main(String[] args) {
@@ -55,11 +71,11 @@ public class Main {
         int res = 0;
         while(lt<=rt){
             int mid = (rt+lt)/2;
-            if(m.count(arr, mid, c)) {
-                rt = mid-1;
+            if(m.count(arr, mid) >=c) {
                 res = mid;
+                lt = mid+1;
             }
-            else lt = mid+1;
+            else rt = mid-1;
         }
         System.out.println(res);
     }
