@@ -17,7 +17,7 @@
  * 120
  * */
 
-package com.company.algorithm.recursive$Tree$DFS$BFS.recursion;
+package com.company.algorithm.recursive$Tree$DFS$BFS.factorial;
 
 import java.util.Scanner;
 
