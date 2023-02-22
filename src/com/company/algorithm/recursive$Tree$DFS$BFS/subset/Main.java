@@ -15,6 +15,7 @@
 * 출력예제
 * 1 2 3
 * 1 2
+* 1 3
 * 1
 * 2 3
 * 2
@@ -25,15 +26,23 @@ package com.company.algorithm.recursive$Tree$DFS$BFS.subset;
 
 public class Main {
     static int n;
+    //ch[] = 문자 깊이 구분자
     static int[] ch;
+    //L = 레벨.
     public void DFS(int L){
+        //출력 문자
         String tmp = "";
+        //만약 레벨(노드의 깊이)이 허용된 길이를 넘어 섰으면 ex)만약 노드의 깊이가 3레벨일경우 4레벨이 되었다면,
         if(L==n+1){
+            //문자 깊이 구분자가 1이라면, 출력문자에 i++;
             for(int i=0; i<=n; i++){
                     if(ch[i]==1) tmp+=(i+" ");
             }
+            //만약 출력문자가 있을경우 출력.
             if(tmp.length()>0) System.out.println(tmp);
+        //만약 레벨(노드의 깊이)이 적정 레벨 안이라면
         } else {
+            //중위순회식으로 처리.
             ch[L] = 1;
             DFS(L+1); //lt
             ch[L] = 0;
