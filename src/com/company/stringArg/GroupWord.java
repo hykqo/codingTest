@@ -16,9 +16,6 @@ aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.
 출력
 첫째 줄에 그룹 단어의 개수를 출력한다.*/
 
-
-import sun.jvm.hotspot.memory.SymbolTable;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
