@@ -14,7 +14,7 @@ public class StringLength {
         for(int i=0; i<s.length; i++){
 
         }
-        for(char c : s.toCharArray()){
+        for(char c : s){
             if(c != t) count++;
             else {
                 System.out.print(count);
