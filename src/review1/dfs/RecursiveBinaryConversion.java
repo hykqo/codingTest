@@ -1,4 +1,4 @@
-package review1.bfs;
+package review1.dfs;
 
 import java.util.Scanner;
 
