@@ -1,6 +1,8 @@
 package review1.bfs;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class ShortestALeafNode {
 
@@ -9,6 +11,23 @@ public class ShortestALeafNode {
     public int DFS(int L, Node root){
         if(root.lt == null && root.rt == null) return L;
         else return Math.min(DFS(L+1, root.lt), DFS(L+1, root.rt));
+    }
+
+    public int BFS(Node root){
+        int L = 0;
+        Queue<Node> Q = new LinkedList<>();
+        Q.offer(root);
+        while (!Q.isEmpty()){
+            int len = Q.size();
+            for(int i=0; i<len; i++){
+                Node n = Q.poll();
+                if(n.lt == null && n.rt == null) return L;
+                if(n.lt != null) Q.offer(n.lt);
+                if(n.rt != null) Q.offer(n.rt);
+            }
+            L++;
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -21,6 +40,7 @@ public class ShortestALeafNode {
         main.root.lt.rt = new Node(5);
 
         System.out.println(main.DFS(0, main.root));
+        System.out.println(main.BFS(main.root));
     }
 
     public static class Node{
