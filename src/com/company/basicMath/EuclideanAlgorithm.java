@@ -28,6 +28,10 @@ public interface EuclideanAlgorithm {
     }
 
     static void main(String[] args) {
-        lcm(70,90);
+
+        int a = 1980;
+        int b = 168;
+        System.out.println(gcd(a,b));
+        System.out.println(lcm(a,b));
     }
 }
